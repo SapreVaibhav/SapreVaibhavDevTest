@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ThirdPartyTools;
-
-namespace FileData
+﻿namespace FileData
 {
     public static class Program
     {

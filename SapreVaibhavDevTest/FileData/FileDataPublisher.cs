@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FileDataController;
+﻿using FileDataController;
+using System;
 using System.Configuration;
 
 namespace FileData
@@ -16,9 +12,7 @@ namespace FileData
         FileDataProcessor oFileDataProcessor = new FileDataProcessor();
         string strInput = "";
         string strResult = "";
-        string[] arrVersion = ConfigurationSettings.AppSettings["VersionCollection"].Split(',');
-        string[] arrSize = ConfigurationSettings.AppSettings["SizeCollection"].Split(',');
-
+      
         internal void GenerateFileData()
         {
             try
@@ -27,11 +21,11 @@ namespace FileData
                 strInput = Console.ReadLine();
                 Console.WriteLine();
 
-                strResult = oFileDataProcessor.ProcessFileData(strInput,arrVersion,arrSize);
+                strResult = oFileDataProcessor.ProcessFileData(strInput);
                 Console.WriteLine(strResult);
 
                 Console.WriteLine();
-                Console.WriteLine("Do you want perform action again?{Y/N}");
+                Console.WriteLine("Do you want to Do it again?{Y/N}");
                 string strYN = Console.ReadLine();
                 Console.WriteLine();
 
@@ -41,6 +35,8 @@ namespace FileData
                 }
                 else 
                 {
+                    Console.WriteLine("Closing application....");
+                    Console.ReadLine();
                     Environment.Exit(0);
                 }
                     
